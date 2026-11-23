@@ -34,11 +34,11 @@ git rev-parse HEAD
 git status --short
 ```
 
-截图显示源码已克隆到本地；origin 的 fetch/push 地址均指向小组仓库，分支为 main，提交编号如上。`git status --short` 没有输出，表示核对时工作区没有未提交修改。
+截图显示源码已克隆到本地；origin 的 fetch/push 地址均指向小组仓库，分支为 main，提交编号如下图。`git status --short` 没有输出，表示核对时工作区没有未提交修改。
 
 ![S1 本地仓库目录 远端 分支和完整提交编号](images/S1-local-repository.png)
 
-操作中曾因粘贴混入特殊字符导致一次 cd 失败；重新输入命令后进入仓库。Git Bash 不支持 PowerShell 的 Get-Location，因此使用 pwd 查看目录。这些错误没有改变已下载源码。
+Git Bash 不支持 PowerShell 的 Get-Location，因此使用 pwd 查看目录。
 
 ### 1.3 源码目录
 
@@ -50,9 +50,9 @@ git status --short
 
 ## 2 版本差异与分析范围
 
-作业示例列出 telemetry、schema、chord、tui、codemode、mcp、ai、durable、env、agent、coding-agent。本次提交的源码不包含独立的 schema、codemode、mcp、env 目录，根 build 也没有调用它们。本报告保留这四项并标注不存在，不为它们虚构功能或依赖，也不据此断言项目完全不含相关能力。
+作业示例列出 telemetry、schema、chord、tui、codemode、mcp、ai、durable、env、agent、coding-agent。本次提交的源码不包含独立的 schema、codemode、mcp、env 目录，根 build 也没有调用它们。本报告保留这四项并标注不存在。
 
-实际根构建新增纳入 session-backends/sqlite-node、protocol、client、server，因此补充分析这四个模块。实际目录中的 evals 用于评估相关工作，其 package.json 没有 build 脚本，根 build 未调用它。根 workspaces 还列出了部分 coding-agent 扩展示例；这不等于根 build 会逐个构建所有 workspace。
+实际根构建新增纳入 session-backends/sqlite-node、protocol、client、server，因此补充分析这四个模块。实际目录中的 evals 用于评估相关工作，其 package.json 没有 build 脚本，根 build 未调用它。
 
 依据：[根 package.json](https://github.com/Learning-Rate-LR/pi-hunnu-2026/blob/1e0fe20497ede31346957636d1ee38a2e61f69d0/package.json#L5)、[evals/package.json](https://github.com/Learning-Rate-LR/pi-hunnu-2026/blob/1e0fe20497ede31346957636d1ee38a2e61f69d0/packages/evals/package.json#L1)，以及本地目录清单。
 
@@ -109,7 +109,7 @@ ai 的离线步骤依次为：check:model-data、tsgo 编译、清理并复制 p
 
 图中实线表示 dependencies 中声明的直接内部依赖，虚线表示 devDependencies。所有箭头统一为“使用方 → 被依赖方”。四个不存在的目录单独列出，不连接推测的依赖线。图省略外部 npm 包和未参加根 build 的 evals，避免将它们混作本次构建模块。
 
-按职责分为应用层、智能体与存储能力、远程通信能力、模型服务和基础能力。chord 提供应用组合机制，tui 提供终端界面，telemetry 提供追踪契约；ai 提供模型服务；agent、durable 和 SQLite 后端负责智能体或记录/存储能力；protocol、client、server 负责远程通信；coding-agent 组合能力形成用户使用的 CLI。该职责划分允许跨层依赖，不要求每条边都只跨相邻层。
+按职责分为应用层、智能体与存储能力、远程通信能力、模型服务和基础能力。chord 提供应用组合机制，tui 提供终端界面，telemetry 提供追踪契约；ai 提供模型服务；agent、durable 和 SQLite 后端负责智能体或记录/存储能力；protocol、client、server 负责远程通信；coding-agent 组合能力形成用户使用的 CLI。该职责划分允许跨层依赖。
 
 coding-agent 对 client、protocol、server 的三条边是开发依赖；不能将它们与 dependencies 中的四条边画成同一种关系。依赖图展示包声明关系，不把间接依赖补画成直接依赖。
 
@@ -153,7 +153,6 @@ telemetry 提供可显式传递的上下文、Span、事件和状态契约，供
 
 重点分析 ai、agent、coding-agent，原因是它们覆盖“模型接口—通用执行循环—面向用户的编程工具”这一条主要路径。与仅阅读包简介相比，AgentSession 的职责注释、agentLoop 的输入/事件流和入口导出能进一步说明这些模块如何分工。
 
-需要特别区分三件事：包级依赖与具体调用路径不同，构建顺序与依赖箭头不同，当前源码与其他同学使用的版本可能不同。因此本报告所有源码依据均固定到开头记录的提交编号，未沿用其他版本的 schema 等依赖关系，也未复制他人的构建报错或实验结论。
 
 ## 8 附件与参考
 
