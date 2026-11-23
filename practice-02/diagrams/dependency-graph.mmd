@@ -1,0 +1,66 @@
+---
+config:
+  theme: base
+  themeVariables:
+    fontFamily: Microsoft YaHei, Arial, sans-serif
+    fontSize: 18px
+    primaryColor: '#eff6ff'
+    primaryTextColor: '#172554'
+    primaryBorderColor: '#6483a9'
+    lineColor: '#475569'
+  flowchart:
+    curve: basis
+    nodeSpacing: 32
+    rankSpacing: 64
+---
+flowchart TB
+  subgraph app[应用层]
+    coding_agent[coding-agent]
+  end
+  subgraph runtime[智能体与存储能力]
+    agent[agent]
+    durable[durable]
+    session_backends_sqlite_node[session-backends/sqlite-node]
+  end
+  subgraph remote[远程通信能力]
+    client[client]
+    server[server]
+    protocol[protocol]
+  end
+  subgraph model[模型服务]
+    ai[ai]
+  end
+  subgraph foundation[基础能力]
+    chord[chord]
+    tui[tui]
+    telemetry[telemetry]
+  end
+  subgraph absent[本版本无独立目录 不建立推测依赖]
+    schema[schema 不存在]
+    codemode[codemode 不存在]
+    mcp[mcp 不存在]
+    env[env 不存在]
+  end
+  ai --> telemetry
+  durable --> chord
+  durable --> ai
+  agent --> chord
+  agent --> ai
+  agent --> telemetry
+  session_backends_sqlite_node --> ai
+  session_backends_sqlite_node --> agent
+  protocol --> chord
+  client --> chord
+  client --> protocol
+  server --> chord
+  server --> agent
+  server --> protocol
+  coding_agent --> chord
+  coding_agent --> agent
+  coding_agent --> ai
+  coding_agent --> tui
+  coding_agent -.-> client
+  coding_agent -.-> protocol
+  coding_agent -.-> server
+  classDef missing fill:#f8fafc,stroke:#94a3b8,stroke-dasharray:5 5,color:#64748b
+  class schema,codemode,mcp,env missing

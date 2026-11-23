@@ -1,0 +1,14 @@
+$ git rev-parse --show-toplevel
+D:/workspace/pi-hunnu-2026
+
+$ git remote -v
+origin	https://github.com/Learning-Rate-LR/pi-hunnu-2026.git (fetch)
+origin	https://github.com/Learning-Rate-LR/pi-hunnu-2026.git (push)
+
+$ git branch --show-current
+main
+
+$ git rev-parse HEAD
+1e0fe20497ede31346957636d1ee38a2e61f69d0
+
+$ git status --short

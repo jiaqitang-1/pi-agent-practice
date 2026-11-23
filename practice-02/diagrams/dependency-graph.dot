@@ -1,0 +1,60 @@
+digraph Dependencies {
+graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.3, nodesep=0.35, ranksep=0.7, splines=spline, fontname="Microsoft YaHei", fontsize=18, labelloc=t, label="模块层级与直接内部依赖\n箭头：使用方 → 被依赖方\n实线：dependencies    橙色虚线：devDependencies"];
+node [shape=box, style="rounded,filled", color="#64748b", fontname="Arial", fontsize=16, margin="0.25,0.18", fontcolor="#172554"];
+edge [color="#475569", arrowsize=0.8, penwidth=1.3];
+subgraph cluster_app { label="应用层"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+coding_agent [label="coding-agent", fillcolor="#dbeafe"];
+}
+subgraph cluster_runtime { label="智能体与存储能力"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+agent [label="agent", fillcolor="#e0f2fe"];
+durable [label="durable", fillcolor="#e0f2fe"];
+session_backends_sqlite_node [label="session-backends/\nsqlite-node", fillcolor="#e0f2fe"];
+}
+subgraph cluster_remote { label="远程通信能力"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+server [label="server", fillcolor="#f0fdf4"];
+client [label="client", fillcolor="#f0fdf4"];
+protocol [label="protocol", fillcolor="#f0fdf4"];
+}
+subgraph cluster_model { label="模型服务"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+ai [label="ai", fillcolor="#ede9fe"];
+}
+subgraph cluster_foundation { label="基础能力"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+chord [label="chord", fillcolor="#f1f5f9"];
+tui [label="tui", fillcolor="#f1f5f9"];
+telemetry [label="telemetry", fillcolor="#f1f5f9"];
+}
+subgraph cluster_missing { label="本版本无独立目录（不建立推测依赖）"; color="#cbd5e1"; style="rounded"; fontname="Microsoft YaHei"; fontsize=16;
+schema [label="schema\n不存在", fillcolor="#f8fafc", style="rounded,filled,dashed", fontcolor="#64748b"];
+codemode [label="codemode\n不存在", fillcolor="#f8fafc", style="rounded,filled,dashed", fontcolor="#64748b"];
+mcp [label="mcp\n不存在", fillcolor="#f8fafc", style="rounded,filled,dashed", fontcolor="#64748b"];
+env [label="env\n不存在", fillcolor="#f8fafc", style="rounded,filled,dashed", fontcolor="#64748b"];
+}
+ai -> telemetry;
+durable -> chord;
+durable -> ai;
+agent -> chord;
+agent -> ai;
+agent -> telemetry;
+session_backends_sqlite_node -> ai;
+session_backends_sqlite_node -> agent;
+protocol -> chord;
+client -> chord;
+client -> protocol;
+server -> chord;
+server -> agent;
+server -> protocol;
+coding_agent -> chord;
+coding_agent -> agent;
+coding_agent -> ai;
+coding_agent -> tui;
+coding_agent -> client [style=dashed, color="#b45309"];
+coding_agent -> protocol [style=dashed, color="#b45309"];
+coding_agent -> server [style=dashed, color="#b45309"];
+{rank=min; coding_agent;}
+{rank=same; durable; session_backends_sqlite_node; client; server;}
+{rank=same; agent; protocol;}
+{rank=same; chord; tui; telemetry;}
+{rank=sink; schema; codemode; mcp; env;}
+// Invisible edge positions the version-difference note; it is not a dependency.
+telemetry -> schema [style=invis];
+}

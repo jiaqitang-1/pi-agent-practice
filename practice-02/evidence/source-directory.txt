@@ -1,0 +1,43 @@
+Local source directory: D:\workspace\pi-hunnu-2026
+Commit: 1e0fe20497ede31346957636d1ee38a2e61f69d0
+
+Root entries:
+FILE .gitattributes
+DIR  .github
+FILE .gitignore
+DIR  .husky
+FILE .npmrc
+DIR  .pi
+FILE AGENTS.md
+FILE biome.json
+FILE CONTRIBUTING.md
+FILE LICENSE
+FILE mini-test.sh
+FILE package-lock.json
+FILE package.json
+DIR  packages
+FILE pi-test.bat
+FILE pi-test.ps1
+FILE pi-test.sh
+FILE README.md
+DIR  scripts
+FILE SECURITY.md
+FILE test.sh
+FILE tsconfig.base.json
+FILE tsconfig.json
+FILE tui-plan.md
+FILE vitest.base.ts
+
+packages/ entries:
+agent/
+ai/
+chord/
+client/
+coding-agent/
+durable/
+evals/
+protocol/
+server/
+session-backends/
+telemetry/
+tui/

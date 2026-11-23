@@ -69,3 +69,7 @@
 ## 选做成果
 
 [两页 PPT 演示文稿](pi-practice.pptx)
+
+## 实践课2
+
+[实践课2：组织建仓与源码分析](practice-02/report.md)
