@@ -1,0 +1,47 @@
+[
+  {
+    "documentImage": "image1.png",
+    "repositoryImage": "images/S1-tool-versions.png",
+    "sha256": "879d54ee80dfb7a6e55cdc0b00283f8aa9ef61650a99b88035a6d9ee6c7f3428"
+  },
+  {
+    "documentImage": "image2.png",
+    "repositoryImage": "images/S2-source-version.png",
+    "sha256": "9e9cf39c5e24915420c7b10bdb52b48691f06ea71c574706755d0d03959dccc3"
+  },
+  {
+    "documentImage": "image3.png",
+    "repositoryImage": "images/S3-1-node-engine.png",
+    "sha256": "6c6bad313b0fafbf4a61b77d9e6ba4ec27e8ffb1ba21ff9d04a8fc19c233dd28"
+  },
+  {
+    "documentImage": "image4.png",
+    "repositoryImage": "images/S3-2-build-script.png",
+    "sha256": "4c994f0e99b29423baf0c815743a7d21e7abeef5c97914df95eef0d95db7399c"
+  },
+  {
+    "documentImage": "image5.png",
+    "repositoryImage": "images/S4-1-install-output.png",
+    "sha256": "f7d93d2345afa56b0377dc2ea860693d6f3f9a334d4f3811e03a312413202a96"
+  },
+  {
+    "documentImage": "image6.png",
+    "repositoryImage": "images/S5-1-build-result.png",
+    "sha256": "3fe22739e85732c3c7b20071a3b08d6b7884e009f75fec06b69213f517fd1db0"
+  },
+  {
+    "documentImage": "image7.png",
+    "repositoryImage": "images/S5-2-bundled-cli.png",
+    "sha256": "609a9611ef4dfb8e1ff43e7564db12991083019c9e2c1f0370f1c5971e9a16c9"
+  },
+  {
+    "documentImage": "image8.png",
+    "repositoryImage": "images/S6-1-source-entry.png",
+    "sha256": "04495d40196d79a726dba186d9d05aba8991549c151b25bbf909b415d0b41890"
+  },
+  {
+    "documentImage": "image9.png",
+    "repositoryImage": "images/S6-2-conversation.png",
+    "sha256": "2c7497ecf36a069835cdd2270e6b0aac16b4ca8ec2c8192d5802b84ceb8671d1"
+  }
+]

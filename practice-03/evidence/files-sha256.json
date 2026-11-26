@@ -6,6 +6,12 @@
     "sha256": "fc387e2173f144b488a4559206e74be5a00217634b35fffb73f80f97b0c6eb2c"
   },
   {
+    "file": "evidence/document-images.json",
+    "hashMode": "text normalized to LF",
+    "bytes": 1622,
+    "sha256": "dee6b9c91889934bb5a43e4fcbeb01f42a192dc124977fa02fccfa708f767ade"
+  },
+  {
     "file": "evidence/model-data-manifest.json",
     "hashMode": "text normalized to LF",
     "bytes": 3696,
@@ -66,10 +72,10 @@
     "sha256": "d71bcb4123ba93ad66749a1cb62144cc2f0997d4597cec7d5c7a55477d175582"
   },
   {
-    "file": "images/S5-1-build-verification-view.png",
+    "file": "images/S5-1-build-result.png",
     "hashMode": "raw PNG bytes",
-    "bytes": 63595,
-    "sha256": "2010180fbd37401fcb48c66afdf5661342d096e7631ecc2c083c35980aab34e5"
+    "bytes": 54971,
+    "sha256": "3fe22739e85732c3c7b20071a3b08d6b7884e009f75fec06b69213f517fd1db0"
   },
   {
     "file": "images/S5-2-bundled-cli.png",
@@ -86,26 +92,8 @@
   {
     "file": "images/S6-2-conversation.png",
     "hashMode": "raw PNG bytes",
-    "bytes": 95865,
-    "sha256": "c0f68eca90e707fd5c1a5b665097d86ecb9a3cf3e5955c05f2a71c0902212103"
-  },
-  {
-    "file": "images/S6-3-local-launch-context.png",
-    "hashMode": "raw PNG bytes",
-    "bytes": 220192,
-    "sha256": "816577989d910f53f315268b4e7a51a3436ca226539f779fdedfec96ab73b9cb"
-  },
-  {
-    "file": "issue-body.md",
-    "hashMode": "text normalized to LF",
-    "bytes": 1588,
-    "sha256": "27efd412b41a40134043817e6f817b2abc910d404777f96eef3c96bc9b9c1052"
-  },
-  {
-    "file": "issue-title.txt",
-    "hashMode": "text normalized to LF",
-    "bytes": 53,
-    "sha256": "e72fd18e5585e34e620d3ab57b24af7f8e39416c30589e2ca9e883d1e9e3e8ac"
+    "bytes": 114537,
+    "sha256": "2c7497ecf36a069835cdd2270e6b0aac16b4ca8ec2c8192d5802b84ceb8671d1"
   },
   {
     "file": "logs/01-online-generation-and-type-error.log",
@@ -146,14 +134,14 @@
   {
     "file": "README.md",
     "hashMode": "text normalized to LF",
-    "bytes": 394,
-    "sha256": "5287b68d75c38af11c5e19bda611e9a8f0cb4a9c579e12fd1c9d87852551c137"
+    "bytes": 548,
+    "sha256": "b92553519773fb40181acaac683dc8333d99718c6451ccd9c51e879a5b59696a"
   },
   {
     "file": "report.md",
     "hashMode": "text normalized to LF",
-    "bytes": 14624,
-    "sha256": "deea717c31bf897cbbb69034a06e343745faecd0ca2b03738022d8ed7ac8c228"
+    "bytes": 14514,
+    "sha256": "22840267d6fc6ccdf44dcb732c8474fc88922ebfe3b2dc053a1a3a35ac997ff6"
   },
   {
     "file": "scripts/pi-build-network.cjs",
