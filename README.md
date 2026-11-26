@@ -77,3 +77,7 @@
 ## 实践课3
 
 [实践课3：Pi Agent源码安装与编译](practice-03/report.md)
+
+## 实践课5
+
+[实践课5：Pi Agent工具调用与会话恢复](practive-05.md)
