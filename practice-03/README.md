@@ -8,4 +8,3 @@
 - [成功构建日志](logs/02-successful-offline-build.log)
 - [本地源码兼容补丁](patches/opencode-go-google-api.patch)
 
-课程 Issue 留待本人检查报告后提交。
