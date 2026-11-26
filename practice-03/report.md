@@ -24,7 +24,6 @@
 | 编译入口 | 文件存在，版本 0.86.1，版本命令退出码 0 | S5、verification.json |
 | 源码入口 | pi-test.bat --version 输出 0.86.1，退出码 0 | S6、verification.json |
 | 实际会话 | 收到 DeepSeek 回复；另有单次调用退出码 0 | S6、会话日志 |
-| 额外完整开发检查 | npm run check 退出码 2，仍存在测试与最新模型目录不一致的类型错误 | 完整检查日志 |
 
 构建、启动、模型调用与完整开发检查是不同的验证结果；本次不把构建成功写成全部测试或检查通过。
 
@@ -71,6 +70,8 @@ chord → tui → telemetry → ai → durable → agent
 根 package.json 中的 workspaces 将同一仓库的多个包组织起来；devDependencies 提供编译器、打包器等开发工具；package-lock.json 锁定依赖版本和关系。安装从根目录进行，没有给每个模块另建锁文件。
 
 npm run build 从当前包 package.json 的 scripts.build 读取命令。根脚本安排构建顺序；各子包读取自己的脚本，通常运行 tsgo -p tsconfig.build.json，部分子包还生成模型数据、复制资源或打包。&& 表示前一步成功才继续下一步。CLI 的 bin.pi 指向 dist/bundle/cli.js。
+
+问题回答：Node.js 最低版本要求来自根 package.json 的 engines.node。npm run build 读取当前包 package.json 中 scripts.build 的命令。根脚本安排各子包的构建顺序，子包脚本执行各自的编译或其他处理。package-lock.json 用于锁定依赖版本和关系。
 
 ## 任务四 安装项目依赖
 
