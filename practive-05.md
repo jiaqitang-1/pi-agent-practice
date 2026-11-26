@@ -107,6 +107,5 @@ node .\packages\coding-agent\dist\cli.js -c --offline --no-approve --provider de
 - [会话记录摘录 JSON](practice-05/evidence/conversations.json)：保存用户提问、模型文本、工具调用、工具返回、会话 ID 和时间，去除了推理字段及无关元数据。没有上传认证配置或完整系统提示。
 - A 与恢复阶段共用会话 ID：`01a2181d-7884-727b-881a-8d91bb42f545`。
 - `/new` 后的会话 ID：`01a21842-9490-715d-a277-9c4eb9246238`。
-- [交接单](practice-05/evidence/handoff.txt)、[图1 PNG](practice-05/figures/figure-1.png)、[图1 PPTX](practice-05/figures/figure-1.pptx)、[图2 PNG](practice-05/figures/figure-2.png)、[图2 PPTX](practice-05/figures/figure-2.pptx)。两张 PPT 都保留黑白原生文字、线条和形状，可继续编辑。
+- [交接单](practice-05/evidence/handoff.txt)、[图1 PNG](practice-05/figures/figure-1.png)、[图1 PPTX](practice-05/figures/figure-1.pptx)、[图2 PNG](practice-05/figures/figure-2.png)、[图2 PPTX](practice-05/figures/figure-2.pptx)。
 
-本次核对后补充了图1的实际调用次数、模型网络边界与会话订阅入口，并将图2的条件性描述更新为本次对照结果。图1、图2均已导出 PNG 检查文字与箭头，并通过 PPTX 结构和版面几何检查。
