@@ -11,11 +11,39 @@
 | [S1](images/S1.png) | `streamAssistantResponse` 中，`await streamFunction(...)` 之前 | Agent 即将进入一次模型调用 |
 | [S2](images/S2.png) | `for (const result of toolResults)` 内，紧接 `currentContext.messages.push(result)` | 一条工具结果已写入当前消息上下文 |
 
+**S1 模型调用前的日志**
+
+![S1 模型调用前的日志](images/S1.png)
+
+**S2 工具结果写入上下文后的日志**
+
+![S2 工具结果写入上下文后的日志](images/S2.png)
+
 ## 构建与启动
 
 在项目根目录执行 `npm.cmd run build`。构建生成了 `packages/coding-agent/dist/bundle`，返回 PowerShell 提示符，随后读取 `$LASTEXITCODE` 得到 `0`。见 [S3a](images/S3a.png)、[S3b](images/S3b.png)、[S3c](images/S3c.png) 和 [S3d](images/S3d.png)。
 
 执行 `node .\packages\coding-agent\dist\cli.js` 后进入 Pi 交互界面，见 [S4](images/S4.png)。
+
+**S3a 执行构建命令**
+
+![S3a 执行构建命令](images/S3a.png)
+
+**S3b 模型目录统计**
+
+![S3b 模型目录统计](images/S3b.png)
+
+**S3c 各软件包编译**
+
+![S3c 各软件包编译](images/S3c.png)
+
+**S3d 构建退出码为 0**
+
+![S3d 构建退出码为 0](images/S3d.png)
+
+**S4 从编译产物启动 Pi**
+
+![S4 从编译产物启动 Pi](images/S4.png)
 
 ## 实际运行记录
 
@@ -33,6 +61,14 @@ Pi 回复：
 
 > Git 分支是一条独立的开发线，让你在隔离的环境中开发新功能或修复问题，完成后再合并回主分支，互不干扰。
 
+**S5 直接问答的输入与回复**
+
+![S5 直接问答的输入与回复](images/S5.png)
+
+**S5-log 直接问答与读文件的累计日志**
+
+![S5-log 直接问答与读文件的累计日志](images/S5-log.png)
+
 ### B 读取文件
 
 实际输入为 `请用 read 工具读取当前目录的 practice4.txt，并告诉我文件中的实验代号。 请用readg工具读取当前目录的practice4.txt`。Pi 调用了一次 `read`，打开 `practice4.txt` 第 1 行，进入两轮模型调用。工具结果日志出现在两条模型调用日志之间。
@@ -46,6 +82,18 @@ Pi 回复：
 Pi 回复：
 
 > 文件中的实验代号是：EXPT-04-LIU
+
+**S6a 读取文件的输入**
+
+![S6a 读取文件的输入](images/S6a.png)
+
+**S6b read 记录及最终回复**
+
+![S6b read 记录及最终回复](images/S6b.png)
+
+**S6c 读取文件后的累计日志**
+
+![S6c 读取文件后的累计日志](images/S6c.png)
 
 ## 调用流程
 
