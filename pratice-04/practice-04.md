@@ -2,9 +2,9 @@
 
 实验使用小组的 [Pi 源码仓库](https://github.com/Learning-Rate-LR/pi-hunnu-2026)，从本地编译产物运行 Pi v0.86.1，模型为 `deepseek-v4-pro`。
 
-## 源码修改
+## 任务一：给 Agent 循环加两行日志
 
-在 `packages/agent/src/agent-loop.ts` 中加入两条输出到标准错误的日志。
+在 `packages/agent/src/agent-loop.ts` 中加入两条输出的日志。
 
 | 截图 | 插入位置 | 含义 |
 | --- | --- | --- |
@@ -19,7 +19,7 @@
 
 ![S2 工具结果写入上下文后的日志](images/S2.png)
 
-## 构建与启动
+## 任务二：重新编译并启动
 
 在项目根目录执行 `npm.cmd run build`。构建生成了 `packages/coding-agent/dist/bundle`，返回 PowerShell 提示符，随后读取 `$LASTEXITCODE` 得到 `0`。见 [S3a](images/S3a.png)、[S3b](images/S3b.png)、[S3c](images/S3c.png) 和 [S3d](images/S3d.png)。
 
@@ -45,7 +45,7 @@
 
 ![S4 从编译产物启动 Pi](images/S4.png)
 
-## 实际运行记录
+## 任务三：对比两次运行
 
 附件中的交互式记录包含三条连续输入。前两条是直接问答，第三条读取文件。以下按输入拆分累计日志，原始证据见 [S5](images/S5.png)、[S5 日志](images/S5-log.png) 及 [S6a](images/S6a.png)、[S6b](images/S6b.png)、[S6c](images/S6c.png)。
 
@@ -108,7 +108,10 @@ flowchart LR
     CLI -->|返回本地文件内容| Agent
 ```
 
-A 的模型直接返回文本，Agent 随即结束该轮处理。B 的首轮模型返回工具调用和文件路径。本机上的 `coding-agent` 执行 `read` 并读取第 1 行。`agent` 追加工具结果后发起第二轮请求，上下文包含首轮模型的工具调用和对应的工具结果消息，其中带有文件内容 `EXPT-04-LIU`。远程模型从该消息获得代号并生成最终答复。
+
+B实际读文件的是本地 coding-agent 提供的 read 工具。 第一轮中，远程模型返回工具调用，指定读取 practice4.txt。`agent` 调度工具执行，本机读取文件后将结果交还给 agent。
+
+下一轮模型请求多带了上一轮的工具调用和对应的工具结果。 工具结果包含从文件读出的实验代号 EXPT-04-LIU。B 的三条日志依次记录了首次模型调用、工具结果写入上下文，以及带着更新后上下文发起的第二次模型调用。
 
 ## 两个独立会话的复跑记录
 
