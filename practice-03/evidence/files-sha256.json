@@ -1,0 +1,164 @@
+[
+  {
+    "file": "evidence/build-verification.txt",
+    "hashMode": "text normalized to LF",
+    "bytes": 472,
+    "sha256": "fc387e2173f144b488a4559206e74be5a00217634b35fffb73f80f97b0c6eb2c"
+  },
+  {
+    "file": "evidence/model-data-manifest.json",
+    "hashMode": "text normalized to LF",
+    "bytes": 3696,
+    "sha256": "5e95bd94449869108047835c1824682a1ee5436460bbbc2c60a9c0723fc39894"
+  },
+  {
+    "file": "evidence/verification.json",
+    "hashMode": "text normalized to LF",
+    "bytes": 638,
+    "sha256": "01891d408afab9ad9166530372d37e7f6c73d7a976e4c21fe25af844bc66da51"
+  },
+  {
+    "file": "images/D1-connection-reset.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 81769,
+    "sha256": "96b5fdab6ee1d4467a10bbc9d3a24d06dcbc50816d2646ce3c024b3a0c40fa1d"
+  },
+  {
+    "file": "images/D2-build-timeout.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 199103,
+    "sha256": "e697cc42db0e21fe4c8a61bb9f44c38ba9350d21c8241ee7aeacf17d2c4b0806"
+  },
+  {
+    "file": "images/S1-tool-versions.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 26122,
+    "sha256": "879d54ee80dfb7a6e55cdc0b00283f8aa9ef61650a99b88035a6d9ee6c7f3428"
+  },
+  {
+    "file": "images/S2-source-version.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 75092,
+    "sha256": "9e9cf39c5e24915420c7b10bdb52b48691f06ea71c574706755d0d03959dccc3"
+  },
+  {
+    "file": "images/S3-1-node-engine.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 7556,
+    "sha256": "6c6bad313b0fafbf4a61b77d9e6ba4ec27e8ffb1ba21ff9d04a8fc19c233dd28"
+  },
+  {
+    "file": "images/S3-2-build-script.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 21351,
+    "sha256": "4c994f0e99b29423baf0c815743a7d21e7abeef5c97914df95eef0d95db7399c"
+  },
+  {
+    "file": "images/S4-1-install-output.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 158239,
+    "sha256": "f7d93d2345afa56b0377dc2ea860693d6f3f9a334d4f3811e03a312413202a96"
+  },
+  {
+    "file": "images/S4-2-install-verification.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 37708,
+    "sha256": "d71bcb4123ba93ad66749a1cb62144cc2f0997d4597cec7d5c7a55477d175582"
+  },
+  {
+    "file": "images/S5-1-build-verification-view.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 63595,
+    "sha256": "2010180fbd37401fcb48c66afdf5661342d096e7631ecc2c083c35980aab34e5"
+  },
+  {
+    "file": "images/S5-2-bundled-cli.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 25754,
+    "sha256": "609a9611ef4dfb8e1ff43e7564db12991083019c9e2c1f0370f1c5971e9a16c9"
+  },
+  {
+    "file": "images/S6-1-source-entry.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 59644,
+    "sha256": "04495d40196d79a726dba186d9d05aba8991549c151b25bbf909b415d0b41890"
+  },
+  {
+    "file": "images/S6-2-conversation.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 95865,
+    "sha256": "c0f68eca90e707fd5c1a5b665097d86ecb9a3cf3e5955c05f2a71c0902212103"
+  },
+  {
+    "file": "images/S6-3-local-launch-context.png",
+    "hashMode": "raw PNG bytes",
+    "bytes": 220192,
+    "sha256": "816577989d910f53f315268b4e7a51a3436ca226539f779fdedfec96ab73b9cb"
+  },
+  {
+    "file": "issue-body.md",
+    "hashMode": "text normalized to LF",
+    "bytes": 1588,
+    "sha256": "27efd412b41a40134043817e6f817b2abc910d404777f96eef3c96bc9b9c1052"
+  },
+  {
+    "file": "issue-title.txt",
+    "hashMode": "text normalized to LF",
+    "bytes": 53,
+    "sha256": "e72fd18e5585e34e620d3ab57b24af7f8e39416c30589e2ca9e883d1e9e3e8ac"
+  },
+  {
+    "file": "logs/01-online-generation-and-type-error.log",
+    "hashMode": "text normalized to LF",
+    "bytes": 4771,
+    "sha256": "1a2a65e3d542ad590bffd515df1e91be54cf48fd899a57e171c6e5f740d15f5d"
+  },
+  {
+    "file": "logs/02-successful-offline-build.log",
+    "hashMode": "text normalized to LF",
+    "bytes": 2376,
+    "sha256": "cd9a69a6c76e0971632153a61a54883e29209e3744be5b24458b7ba0d3898b64"
+  },
+  {
+    "file": "logs/03-development-check-failed.log",
+    "hashMode": "text normalized to LF",
+    "bytes": 63838,
+    "sha256": "aa337b827b71e9f8044f990e379ef38eaea9b228151e94b9faf09cf6c7128291"
+  },
+  {
+    "file": "logs/04-source-conversation.log",
+    "hashMode": "text normalized to LF",
+    "bytes": 188,
+    "sha256": "82bdd8e667204372915998bf8089f40f34967528f603f207e879a2e43b9a58dd"
+  },
+  {
+    "file": "patches/opencode-go-google-api.patch",
+    "hashMode": "text normalized to LF",
+    "bytes": 1770,
+    "sha256": "3f3e6d4d2c3f27e61985509c082e3a6cdb3f746eb80db037a5ab9f9db9a792f8"
+  },
+  {
+    "file": "patches/opencode-go.fixed.ts",
+    "hashMode": "text normalized to LF",
+    "bytes": 1288,
+    "sha256": "ac5831ae625647a890bed81300a2454553619b6c0f7e8a8f03c8436ca4920957"
+  },
+  {
+    "file": "README.md",
+    "hashMode": "text normalized to LF",
+    "bytes": 394,
+    "sha256": "5287b68d75c38af11c5e19bda611e9a8f0cb4a9c579e12fd1c9d87852551c137"
+  },
+  {
+    "file": "report.md",
+    "hashMode": "text normalized to LF",
+    "bytes": 14624,
+    "sha256": "deea717c31bf897cbbb69034a06e343745faecd0ca2b03738022d8ed7ac8c228"
+  },
+  {
+    "file": "scripts/pi-build-network.cjs",
+    "hashMode": "text normalized to LF",
+    "bytes": 1104,
+    "sha256": "a77d002cdcbdf5b4953abac09ec9feb011c7ab21961449406933f5e3f99b1551"
+  }
+]

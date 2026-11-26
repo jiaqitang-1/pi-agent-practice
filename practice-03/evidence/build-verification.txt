@@ -1,0 +1,18 @@
+PRACTICE 03 - REAL BUILD LOG AND ENTRY VERIFICATION
+Source: D:\workspace\pi-hunnu-2026
+
+Last completed build: npm run build:offline
+Excerpt from the saved build log:
+
+Built packages\coding-agent\dist\bundle (56 files, 8.3 MiB)
+BUILD_EXIT_CODE=0
+
+Current entry checks, rerun on 2026-11-26:
+Test-Path packages/coding-agent/dist/bundle/cli.js
+True
+node packages/coding-agent/dist/bundle/cli.js --version
+0.86.1
+CLI_EXIT_CODE=0
+pi-test.bat --version
+0.86.1
+SOURCE_EXIT_CODE=0

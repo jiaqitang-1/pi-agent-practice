@@ -73,3 +73,7 @@
 ## 实践课2
 
 [实践课2：组织建仓与源码分析](practice-02/report.md)
+
+## 实践课3
+
+[实践课3：Pi Agent源码安装与编译](practice-03/report.md)

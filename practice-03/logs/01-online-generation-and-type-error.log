@@ -1,0 +1,111 @@
+
+> pi-monorepo@0.0.3 build
+> cd packages/chord && npm run build && cd ../tui && npm run build && cd ../telemetry && npm run build && cd ../ai && npm run build && cd ../durable && npm run build && cd ../agent && npm run build && cd ../session-backends/sqlite-node && npm run build && cd ../../protocol && npm run build && cd ../client && npm run build && cd ../server && npm run build && cd ../coding-agent && npm run build
+
+
+> @earendil-works/chord@0.86.1 build
+> tsgo -p tsconfig.build.json
+
+
+> @earendil-works/pi-tui@0.86.1 build
+> tsgo -p tsconfig.build.json
+
+
+> @earendil-works/pi-telemetry@0.86.1 build
+> tsgo -p tsconfig.build.json
+
+
+> @earendil-works/pi-ai@0.86.1 build
+> npm run generate-models && npm run build:offline
+
+
+> @earendil-works/pi-ai@0.86.1 generate-models
+> node scripts/generate-models.ts --strict
+
+[build-network] Explicit proxy enabled; connect timeout 60s; GET/HEAD retries up to 2.
+Fetching models from models.dev API...
+Fetching models from NVIDIA NIM API...
+Fetched 30 model IDs from NVIDIA NIM
+Loaded 867 tool-capable models from models.dev
+Fetching models from OpenRouter API...
+Fetched 410 tool-capable models from OpenRouter
+Fetching models from Vercel AI Gateway API...
+Fetched 305 tool-capable models from Vercel AI Gateway
+Fetching models from Radius API...
+Fetched 39 models from Radius
+Generated provider catalogs and src/models.generated.ts
+Generated JSON model values under src/providers/data/
+
+Model Statistics:
+  Total tool-capable models: 1662
+  Reasoning-capable models: 1441
+  amazon-bedrock: 204 models
+  anthropic: 18 models
+  google: 25 models
+  google-vertex: 17 models
+  openai: 39 models
+  groq: 7 models
+  cerebras: 2 models
+  cloudflare-workers-ai: 13 models
+  cloudflare-ai-gateway: 56 models
+  xai: 4 models
+  meta: 7 models
+  zai: 8 models
+  zai-coding-cn: 5 models
+  mistral: 24 models
+  huggingface: 108 models
+  fireworks: 37 models
+  nvidia: 11 models
+  together: 24 models
+  baseten: 18 models
+  opencode: 83 models
+  opencode-go: 31 models
+  github-copilot: 33 models
+  minimax: 3 models
+  minimax-cn: 3 models
+  kimi-coding: 6 models
+  moonshotai: 6 models
+  moonshotai-cn: 6 models
+  xiaomi: 3 models
+  xiaomi-token-plan-cn: 2 models
+  xiaomi-token-plan-ams: 2 models
+  xiaomi-token-plan-sgp: 2 models
+  qwen-token-plan: 20 models
+  qwen-token-plan-individual: 9 models
+  qwen-token-plan-cn: 20 models
+  openrouter: 412 models
+  vercel-ai-gateway: 305 models
+  radius: 39 models
+  deepseek: 2 models
+  ant-ling: 3 models
+  openai-codex: 6 models
+  azure-openai-responses: 39 models
+
+> @earendil-works/pi-ai@0.86.1 build:offline
+> npm run check:model-data && tsgo -p tsconfig.build.json && shx rm -rf dist/providers/data && shx cp -r src/providers/data dist/providers/data
+
+
+> @earendil-works/pi-ai@0.86.1 check:model-data
+> node scripts/check-model-data.ts
+
+Generated model data is valid.
+src/providers/opencode-go.ts(14,3): error TS2322: Type '((Model<"anthropic-messages"> & { id: "claude-haiku-5-5"; provider: "opencode-go"; }) | (Model<"anthropic-messages"> & { id: "minimax-m3"; provider: "opencode-go"; }) | ... 29 more ... | (Model<...> & { ...; }))[]' is not assignable to type 'readonly Model<"anthropic-messages" | "openai-completions" | "openai-responses">[]'.
+  Type '(Model<"anthropic-messages"> & { id: "claude-haiku-5-5"; provider: "opencode-go"; }) | (Model<"anthropic-messages"> & { id: "minimax-m3"; provider: "opencode-go"; }) | ... 29 more ... | (Model<...> & { ...; })' is not assignable to type 'Model<"anthropic-messages" | "openai-completions" | "openai-responses">'.
+    Type 'Model<"google-generative-ai"> & { id: "gemini-4-argon"; provider: "opencode-go"; }' is not assignable to type 'Model<"anthropic-messages" | "openai-completions" | "openai-responses">'.
+      Types of property 'api' are incompatible.
+        Type '"google-generative-ai"' is not assignable to type '"anthropic-messages" | "openai-completions" | "openai-responses"'.
+npm error Lifecycle script `build:offline` failed with error:
+npm error code 1
+npm error path D:\workspace\pi-hunnu-2026\packages\ai
+npm error workspace @earendil-works/pi-ai@0.86.1
+npm error location D:\workspace\pi-hunnu-2026\packages\ai
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c npm run check:model-data && tsgo -p tsconfig.build.json && shx rm -rf dist/providers/data && shx cp -r src/providers/data dist/providers/data
+npm error Lifecycle script `build` failed with error:
+npm error code 1
+npm error path D:\workspace\pi-hunnu-2026\packages\ai
+npm error workspace @earendil-works/pi-ai@0.86.1
+npm error location D:\workspace\pi-hunnu-2026\packages\ai
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c npm run generate-models && npm run build:offline
+BUILD_EXIT_CODE=1
