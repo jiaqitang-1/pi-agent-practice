@@ -8,18 +8,18 @@
 
 | 截图 | 插入位置 | 含义 |
 | --- | --- | --- |
-| [S1](practice-04/images/S1.png) | `streamAssistantResponse` 中，`await streamFunction(...)` 之前 | Agent 即将进入一次模型调用 |
-| [S2](practice-04/images/S2.png) | `for (const result of toolResults)` 内，紧接 `currentContext.messages.push(result)` | 一条工具结果已写入当前消息上下文 |
+| [S1](images/S1.png) | `streamAssistantResponse` 中，`await streamFunction(...)` 之前 | Agent 即将进入一次模型调用 |
+| [S2](images/S2.png) | `for (const result of toolResults)` 内，紧接 `currentContext.messages.push(result)` | 一条工具结果已写入当前消息上下文 |
 
 ## 构建与启动
 
-在项目根目录执行 `npm.cmd run build`。构建生成了 `packages/coding-agent/dist/bundle`，返回 PowerShell 提示符，随后读取 `$LASTEXITCODE` 得到 `0`。见 [S3a](practice-04/images/S3a.png)、[S3b](practice-04/images/S3b.png)、[S3c](practice-04/images/S3c.png) 和 [S3d](practice-04/images/S3d.png)。
+在项目根目录执行 `npm.cmd run build`。构建生成了 `packages/coding-agent/dist/bundle`，返回 PowerShell 提示符，随后读取 `$LASTEXITCODE` 得到 `0`。见 [S3a](images/S3a.png)、[S3b](images/S3b.png)、[S3c](images/S3c.png) 和 [S3d](images/S3d.png)。
 
-执行 `node .\packages\coding-agent\dist\cli.js` 后进入 Pi 交互界面，见 [S4](practice-04/images/S4.png)。
+执行 `node .\packages\coding-agent\dist\cli.js` 后进入 Pi 交互界面，见 [S4](images/S4.png)。
 
 ## 实际运行记录
 
-附件中的交互式记录包含三条连续输入。前两条是直接问答，第三条读取文件。以下按输入拆分累计日志，原始证据见 [S5](practice-04/images/S5.png)、[S5 日志](practice-04/images/S5-log.png) 及 [S6a](practice-04/images/S6a.png)、[S6b](practice-04/images/S6b.png)、[S6c](practice-04/images/S6c.png)。
+附件中的交互式记录包含三条连续输入。前两条是直接问答，第三条读取文件。以下按输入拆分累计日志，原始证据见 [S5](images/S5.png)、[S5 日志](images/S5-log.png) 及 [S6a](images/S6a.png)、[S6b](images/S6b.png)、[S6c](images/S6c.png)。
 
 ### A 直接问答
 
